@@ -128,7 +128,7 @@ p { margin: 0 0 1.1em; }
 }
 .ticket .gold-frame { padding: 1.6rem; }
 .title-plate {
-  background: #2a1b14;
+  background: #110906;
   background-image: var(--grain);
   border-radius: 14px;
   padding: 1.6rem 1rem 1.8rem;
@@ -572,3 +572,21 @@ html { scroll-padding-top: calc(var(--header-h) + 12px); }
   object-fit: contain;
 }
 
+.trailing-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 9px;
+  pointer-events: none; /* Prevents the image from blocking clicks or mousemove events underneath it */
+  
+  /* Centering adjustment matrix */
+  margin-left: +20px;  /* Exactly half of width to center on cursor */
+  margin-top: +20px;   /* Exactly half of height to center on cursor */
+  
+  /* Control the lag/smoothness speed here */
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}

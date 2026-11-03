@@ -146,3 +146,16 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   window.addEventListener('resize', () => { if (window.innerWidth > 1020) setOpen(false); });
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const trailImage = document.getElementById('trailImage');
+
+  document.addEventListener('mousemove', (e) => {
+    // Grab the current coordinates of the pointer
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Use translate3d for hardware acceleration and smoother rendering
+    trailImage.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  });
+});
