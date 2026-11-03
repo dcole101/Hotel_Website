@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>?</title>
+<style>
+  body {
+    background-color: #000;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #centerImg {
+    width: 300px;
+    position: relative;
+  }
+
+  #dragImg {
+    width: 200px;
+    position: absolute;
+    right: 20%;
+    top: 52%;
+    transform: translateY(-50%);
+    cursor: grab;
+    z-index: 10;
+  }
+  
+  #cornerImg {
+    position: fixed;
+    bottom: 10px; 
+    left: 15px;   
+    width: 20px;   
+    height: auto;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+</style>
+</head>
+<body>
+
+<img id="dragImg" src="https://file.garden/aM3XGstJ4WLiRDxF/4a0b7313d784eae5fa707f9bea15cec2-removebg-preview.png">
+<img id="centerImg" src="https://file.garden/aM3XGstJ4WLiRDxF/9a066dd7e0c0e0ae6190b45467f94311.jpg">
+  
+  <img id="cornerImg" 
+     src="https://file.garden/aM3XGstJ4WLiRDxF/1109758314423783524.webp" 
+     title="Bring the letter opener to the letter, dearest." 
+     alt="Corner Image">
+
+<audio id="successSound">
+  <source src="https://file.garden/aM3XGstJ4WLiRDxF/papercrackle1-94430.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const dragImg = document.getElementById("dragImg");
+const centerImg = document.getElementById("centerImg");
+const sound = document.getElementById("successSound");
+
+let posX = 0, posY = 0, mouseX = 0, mouseY = 0;
+let collisionTriggered = false;
+
+dragImg.onmousedown = function(e) {
+  e.preventDefault();
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  dragImg.style.cursor = "grabbing";
+
+  document.onmousemove = dragMouseMove;
+  document.onmouseup = dragMouseUp;
+};
+
+function dragMouseMove(e) {
+  e.preventDefault();
+  const dx = e.clientX - mouseX;
+  const dy = e.clientY - mouseY;
+
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  dragImg.style.left = (dragImg.offsetLeft + dx) + "px";
+  dragImg.style.top = (dragImg.offsetTop + dy) + "px";
+
+  checkCollision();
+}
+
+function dragMouseUp() {
+  document.onmousemove = null;
+  document.onmouseup = null;
+  dragImg.style.cursor = "grab";
+  collisionTriggered = false;
+}
+
+function checkCollision() {
+  const dragRect = dragImg.getBoundingClientRect();
+  const centerRect = centerImg.getBoundingClientRect();
+
+  const touching =
+    dragRect.left < centerRect.right &&
+    dragRect.right > centerRect.left &&
+    dragRect.top < centerRect.bottom &&
+    dragRect.bottom > centerRect.top;
+
+  if (touching && !collisionTriggered) {
+    collisionTriggered = true;
+    sound.play();
+    setTimeout(() => {
+      window.location.href = 'C:/Users/Dani/OneDrive/Desktop/Neocities/hotel/home.html'; 
+    }, 1200);
+  }
+}
+</script>
+
+</body>
+</html>
