@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/svg+xml" href="watch2.gif">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dead Tired</title>
@@ -11,6 +12,27 @@
     <script src="script.js"></script>
 </head>
 <body>
+<!--Sound-->
+<!-- <audio id="bgm" src="elevatormusic.mp3" loop preload="auto"></audio>
+<button id="toggle-music" type="button">Play Music</button>
+
+<script>
+  const bgm = document.getElementById("bgm");
+  const toggleBtn = document.getElementById("toggle-music");
+  bgm.volume = 0.4;
+
+  toggleBtn.addEventListener("click", async () => {
+    if (bgm.paused) {
+      await bgm.play();
+      toggleBtn.textContent = "Pause Music";
+    } else {
+      bgm.pause();
+      toggleBtn.textContent = "Play Music";
+    }
+  });
+</script> -->
+
+
   <header class="site-header">
     <!-- CURSOR-->
      <img src="ghost_cursor2.png" alt="Trailing Asset" class="trailing-image" id="trailImage">
@@ -73,6 +95,7 @@
       <div class="panel-body">
         <div class="photo-frame float-left">
           <img data-ph data-w="480" data-h="360" alt="">
+         
           <span class="clip"></span>
         </div>
         <p>Dead Tired is a three-minute animated short film about an exhausted businessman who checks into a rundown hotel, only to encounter a ghost with a talent for mischief and a desperate need for attention.</p>
@@ -124,8 +147,8 @@
           <img data-ph data-w="520" data-h="400" alt="">
           <span class="clip"></span>
         </div>
-        <p>Inspired by the Crescent Hotel in Arizona, the Deepwoods Hotel is an aging establishment with an atmosphere reminiscent of the 1980s. Its faded elegance hints at a more glamorous past, while its neglected interiors reveal years of wear and tear.</p>
-        <p>The hotel has been haunted for so long that few guests dare to stay, leaving its halls quiet and its rooms largely forgotten. Much like Greg himself, the Deepwoods Hotel maintains an air of sophistication despite being thoroughly rundown.</p>
+        <p>Inspired by the Crescent Hotel, the Deepwoods Hotel is an aging establishment with an atmosphere reminiscent of the 1980s.</p>
+        <p>The hotel has been haunted for so long that few guests dare to stay, leaving its halls quiet and its rooms largely forgotten.</p>
       </div>
     </section>
 
@@ -138,7 +161,7 @@
       </div>
       <div class="panel-body">
         <div class="photo-frame float-left">
-          <img data-ph data-w="480" data-h="360" alt="">
+         <img src="Images/logo.png" width="480">
           <span class="clip"></span>
         </div>
         <p>Electric Spuds is a collaborative team of Sheridan College Computer Animation alumni who came together to create an original animated short film.</p>
@@ -161,9 +184,9 @@
 
         <h3 class="sub-title">The Production Process</h3>
         <ol class="process">
-          <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>01. Story Development</span></li>
-          <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>02. Storyboarding</span></li>
-          <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>03. Modelling</span></li>
+          <li class="step"><div class="gold-frame small"><img src="Images/artroom.png"></div><span>01. Story Development</span></li>
+          <li class="step"><div class="gold-frame small"><img src="Images/storyboard.png"></div><span>02. Storyboarding</span></li>
+          <li class="step"><div class="gold-frame small"><img src="Images/bbscult2.png"></div><span>03. Modelling</span></li>
           <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>04. Surfacing</span></li>
           <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>05. Rigging</span></li>
           <li class="step"><div class="gold-frame small"><img data-ph data-w="360" data-h="270" alt=""></div><span>06. Layout</span></li>
@@ -208,13 +231,28 @@
 
   </main>
 
+
+
   <!-- FOOTER -->
   <footer class="footer paper reveal" data-torn>
     <div class="gold-frame">
       <h2>Follow Our Journey</h2>
       <!-- <p>From the first story ideas to the final frames, Dead Tired represents a shared commitment to creativity, collaboration, and the craft of animation.</p> -->
       <p class="credit">A film by Electric Spuds.</p>
-    </div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="buttonstyle.css">
+<div class="iconbody">
+  <ul class="social">
+    <li><i class="fa fa-envelope"></i></li>
+    <li><i class="fa fa-instagram"></i></li>
+    <li><i class="fa fa-linkedin"></i></li>
+    <li><i class="fa fa-youtube"></i></li>
+  </ul>
+</div>
+  
+
+
   </footer>
 
   <script src="script.js"></script>

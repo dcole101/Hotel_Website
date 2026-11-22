@@ -257,7 +257,7 @@ h2 {
   border: 2px solid var(--gold);
   margin-bottom: 1rem;
 }
-.photo-frame img { filter: grayscale(.6) sepia(.4); }
+.photo-frame img { filter: grayscale(.1) sepia(.4); }
 .float-left  { float: left;  margin-right: 1.8rem; transform: rotate(-3deg); }
 .float-right { float: right; margin-left: 1.8rem;  transform: rotate(3deg); }
 .clip {
@@ -350,6 +350,13 @@ h2 {
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--brown);
+}
+
+.gold-frame.small img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* artists */

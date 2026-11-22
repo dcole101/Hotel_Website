@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/svg+xml" href="favicon.ico">
 <meta charset="UTF-8" />
-<title>?</title>
+<title>Welcome...</title>
 <style>
   body {
     background-color: #000;
@@ -16,7 +17,7 @@
   }
 
   #centerImg {
-    width: 300px;
+    width: 500px;
     position: relative;
   }
 
@@ -43,19 +44,21 @@
 </head>
 <body>
 
-<img id="dragImg" src="https://file.garden/aM3XGstJ4WLiRDxF/4a0b7313d784eae5fa707f9bea15cec2-removebg-preview.png">
-<img id="centerImg" src="https://file.garden/aM3XGstJ4WLiRDxF/9a066dd7e0c0e0ae6190b45467f94311.jpg">
+<img id="dragImg" src="keyrender.png">
+<img id="centerImg" src="Door_web_open.png">
   
   <img id="cornerImg" 
      src="https://file.garden/aM3XGstJ4WLiRDxF/1109758314423783524.webp" 
-     title="Bring the letter opener to the letter, dearest." 
+     title="Unlock the door with the keys, sir." 
      alt="Corner Image">
 
 <audio id="successSound">
-  <source src="https://file.garden/aM3XGstJ4WLiRDxF/papercrackle1-94430.mp3" type="audio/mpeg">
+  <source src="doorcreak.wav" type="audio/mpeg">
 </audio>
 
 <script>
+  const openDoor = new Image();
+openDoor.src = "Door_web_open2.png";
 const dragImg = document.getElementById("dragImg");
 const centerImg = document.getElementById("centerImg");
 const sound = document.getElementById("successSound");
@@ -106,13 +109,15 @@ function checkCollision() {
 
   if (touching && !collisionTriggered) {
     collisionTriggered = true;
+
     sound.play();
+    centerImg.src = openDoor.src;
+
     setTimeout(() => {
-      window.location.href = 'https://dcole101.github.io/Hotel_Website/home.html'; 
+      window.location.href = 'home.html';
     }, 1200);
   }
 }
 </script>
-
 </body>
 </html>
