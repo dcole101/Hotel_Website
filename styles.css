@@ -194,10 +194,10 @@ main {
 .panel-head::before { /* deco chevrons */
   content: "";
   position: absolute; top: 1.4rem; left: 8%; right: 8%; height: 26px;
-  background:
+  /* background:
     linear-gradient(135deg, transparent 47%, var(--brown) 47% 53%, transparent 53%) 50% 0 / 26px 26px no-repeat,
     linear-gradient(225deg, transparent 47%, var(--brown) 47% 53%, transparent 53%) 50% 0 / 26px 26px no-repeat,
-    linear-gradient(var(--gold-dark), var(--gold-dark)) 0 100% / 100% 2px no-repeat;
+    linear-gradient(var(--gold-dark), var(--gold-dark)) 0 100% / 100% 2px no-repeat; */
   opacity: .8;
 }
 .skyline {
@@ -327,7 +327,7 @@ h2 {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #3a1b05;
-  filter: sepia(.35);
+  filter: sepia(.1);
 }
 .oval-frame.mini { width: 120px; padding: 7px; }
 .oval-frame.mini img { border-width: 2px; }
