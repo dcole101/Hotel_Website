@@ -1,0 +1,82 @@
+/* Previous Pitches — simple carousels
+   No animation, black controls, full-color images.
+   Avoids the .container class (sidepagestyle.css makes it grayscale). */
+
+.pitch {
+  padding: 20px 0 10px 0;
+}
+
+.pitch-label {
+  color: #ff850b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.simple-carousel img {
+  display: none;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  filter: none; /* full color */
+}
+
+.simple-carousel img.active {
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Reset any global button styling from style.css, then make them black */
+.carousel-controls button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 14px;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.carousel-controls button:hover,
+.carousel-controls button:focus,
+.carousel-controls button:active {
+  background: #000;
+  color: #fff;
+  transform: none !important;
+}
+
+.carousel-controls button::before,
+.carousel-controls button::after {
+  display: none !important;
+}
+
+.carousel-count {
+  color: #ccc;
+  font-size: 13px;
+  min-width: 48px;
+  text-align: center;
+}
+
+/* Room for 1–2 sentences under each carousel */
+.pitch-caption {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 3.2em;
+  margin: 14px 4px 0 4px;
+  max-width: 800px;
+}
