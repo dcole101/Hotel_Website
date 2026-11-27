@@ -1,123 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <link rel="icon" type="image/svg+xml" href="favicon.ico">
-<meta charset="UTF-8" />
-<title>Welcome...</title>
-<style>
-  body {
-    background-color: #000;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELECTRIC SPUDS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
 
-  #centerImg {
-    width: 500px;
-    position: relative;
-  }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  #dragImg {
-    width: 200px;
-    position: absolute;
-    right: 20%;
-    top: 52%;
-    transform: translateY(-50%);
-    cursor: grab;
-    z-index: 10;
-  }
-  
-  #cornerImg {
-    position: fixed;
-    bottom: 10px; 
-    left: 15px;   
-    width: 20px;   
-    height: auto;
-    cursor: pointer;
-    z-index: 9999; 
-  }
-</style>
-</head>
-<body>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/svg+xml" href="6-removebg-preview.png" />
+    <style>
+      body {
+        background: url(background_orange.png) no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
 
-<img id="dragImg" src="keyrender.png">
-<img id="centerImg" src="Door_web_open.png">
-  
-  <img id="cornerImg" 
-     src="https://file.garden/aM3XGstJ4WLiRDxF/1109758314423783524.webp" 
-     title="Unlock the door with the keys, sir." 
-     alt="Corner Image">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #070909">
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        style="color: #ff850b; font-size: 12px; font-family: &quot;Electric Toaster&quot;"
+        href="index.html"
+        >ES HOME</a
+      >
+      <a class="mx-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="mx-2" href="#"><i class="fa-brands fa-youtube"></i></a>
 
-<audio id="successSound">
-  <source src="doorcreak.wav" type="audio/mpeg">
-</audio>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-end" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" style="color: #dcd9d6" href="about.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" style="color: #dcd9d6" href="404.html">OUR TEAM</a></li>
+          <li class="nav-item"><a class="nav-link active" style="color: #dcd9d6" href="blog.html">BLOG</a></li>
+          <li class="nav-item"><a class="nav-link" style="color: #dcd9d6" href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /Navbar -->
 
-<script>
-  const openDoor = new Image();
-openDoor.src = "Door_web_open2.png";
-const dragImg = document.getElementById("dragImg");
-const centerImg = document.getElementById("centerImg");
-const sound = document.getElementById("successSound");
+  <div class="mx-auto">
+    <div class="title">
+      <h1 style="font-size: 3.5vw; font-weight: bold; font-style: italic; font-family: &quot;Electric Toaster&quot;">
+        ELECTRIC SPUDS
+      </h1>
+      <span style="font-size: 20px; letter-spacing: 2px; margin-top: -10px; position: absolute"
+        >A Collaborative 3D Animation Group</span
+      >
+    </div>
+  </div>
 
-let posX = 0, posY = 0, mouseX = 0, mouseY = 0;
-let collisionTriggered = false;
+  <!-- <div class="mx-md-0 mx-1 col-md-auto col">
+        <img src="https://powell-general-electric.neocities.org/assets/magnetismnotes.png" 
+        style="max-width:15%; position:fixed; bottom:5px; right:-50px; z-index:3; opacity:50%;" ></div>
+        
+     <div class="mx-md-0 mx-1 col-md-auto col">
+        <img src="https://powell-general-electric.neocities.org/assets/angeldiagram.png" 
+        style="max-width:15%; position:fixed; bottom:300px; left:-10px; z-index:3; opacity:50%; transform:rotate(2deg);" ></div>
 
-dragImg.onmousedown = function(e) {
-  e.preventDefault();
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  dragImg.style.cursor = "grabbing";
+     <div class="mx-md-0 mx-1 col-md-auto col">
+        <img src="https://powell-general-electric.neocities.org/assets/signatures.png" 
+        style="max-width:15%; position:fixed; bottom:0px; left:0px; z-index:3; opacity:50%;" ></div> -->
 
-  document.onmousemove = dragMouseMove;
-  document.onmouseup = dragMouseUp;
-};
+  <div class="content line" style="min-width: 100%; margin-top: 150px">
+    <div class="mx-auto p-4" style="max-width: 1500px; margin-top: 150px">
+      <div class="row">
+        <div class="col-md">
+          <h1>⚡︎ ⚡︎ about us_</h1>
+          <div style="padding-left: 20px; text-align: justify">
+            <p>
+              We're Electric Spuds, an animation collective bringing together 14 emerging artists from across Canada,
+              the United States, and China.
+            </p>
+            <p>
+              Built on a shared love of animation, storytelling, and all things creative, we're a full production team
+              working together to bring original ideas to life. From colourful characters to expressive worlds and
+              stories packed with personality, we believe animation should be fun to make and even more fun to watch.
+            </p>
+          </div>
 
-function dragMouseMove(e) {
-  e.preventDefault();
-  const dx = e.clientX - mouseX;
-  const dy = e.clientY - mouseY;
+          <div class="break"></div>
 
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+          <h1>⚡︎ ⚡︎ updates _</h1>
 
-  dragImg.style.left = (dragImg.offsetLeft + dx) + "px";
-  dragImg.style.top = (dragImg.offsetTop + dy) + "px";
+          <div class="row no-gutters">
+            <div
+              class="col-md-8 d-flex flex-row justify-content-between p-2"
+              style="border-bottom: 1px solid #000; background-color: #000; color: #eee">
+              <div class="col">
+                <p style="color: #ff850b">Website launched</p>
+              </div>
+              <div class="col text-end"><i>December 2026</i></div>
+            </div>
+            <div class="col d-none d-lg-block p-2 text-end" style="border-bottom: 1px solid #000">-</div>
+          </div>
 
-  checkCollision();
-}
+          <div class="row no-gutters">
+            <div
+              class="col-md-8 d-flex flex-row justify-content-between p-2"
+              style="border-bottom: 1px solid #000; background-color: #000; color: #ddd">
+              <div class="col">
+                <a href="blog.html" style="color: #ff850b"> New Blog Post</a>
+              </div>
+              <div class="col text-end"><i> Jan / 01 / 2027</i></div>
+            </div>
+            <div class="col d-none d-lg-block p-2 text-end" style="border-bottom: 1px solid #000">-</div>
+          </div>
 
-function dragMouseUp() {
-  document.onmousemove = null;
-  document.onmouseup = null;
-  dragImg.style.cursor = "grab";
-  collisionTriggered = false;
-}
+          <div class="break"></div>
+        </div>
+        <div class="col-4 mx-3 d-none d-lg-block">
+          <img src="logonotebook.png" style="margin-top: -60px; margin-left: -60px; width: 110%" />
+        </div>
 
-function checkCollision() {
-  const dragRect = dragImg.getBoundingClientRect();
-  const centerRect = centerImg.getBoundingClientRect();
+        <div class="col-md">
+          <h1>⚡︎ ⚡︎ Making Animation _</h1>
+          <div style="padding-left: 20px; text-align: justify">
+            <p>
+              We create short-form animated stories with a focus on stylized visuals, expressive characters, comedy, and
+              memorable storytelling.
+            </p>
+            <p>
+              Inspired by the animated films, anime, and cartoons we love, our work brings together aesthetics, familiar
+              tropes, and the unexpected.
+            </p>
+          </div>
 
-  const touching =
-    dragRect.left < centerRect.right &&
-    dragRect.right > centerRect.left &&
-    dragRect.top < centerRect.bottom &&
-    dragRect.bottom > centerRect.top;
+          <div class="col-md">
+            <h1>⚡︎ ⚡︎ How? _</h1>
+            <div style="padding-left: 20px; text-align: justify">
+              <p>
+                We do the full industry-level pipeline, working remotely across multiple countries and time zones. We
+                design new pitches, projects and plans within our group, and get it done.
+              </p>
+            </div>
+          </div>
 
-  if (touching && !collisionTriggered) {
-    collisionTriggered = true;
+          <div class="break"></div>
+          <!-- <div class="nav">
+            <h1>⚡︎  ⚡︎  quick navigation _</h1> 
+           <div style="padding-left:20px; text-align:justify;">
+              
+            <div class="row no-gutters">
+                <div class="col"><h6>WORLD</h6>
+            <ul style="list-style-type:none; padding:0px;">
+              <li><a href="https://powell-general-electric.neocities.org/world#pge">PGE</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/world#departments">Departments</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/world#work">Work</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/world#employees">Employees</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/world#angels">Angels</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/world#ordeals">Ordeals</a></li>
+            </ul></div>
+                <div class="col"><h6>MECHANICS</h6>
+            <ul style="list-style-type:none; padding:0px;">
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#guidelines">Guidelines</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#member-missions">Member Missions</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#stats">Stats</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#leveling">Leveling</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#sanity">Sanity</a></li>
+              <li><a href="https://powell-general-electric.neocities.org/mechanics#death">Non-permanent Death</a></li>
+            </ul></div>
+            
+             <div class="col"><h6>CREATION</h6>
+            <ul style="list-style-type:none; padding:0px;">
+              <li><a href="https://powell-general-electric.neocities.org/creation">Guidelines</a></li>
+              <li><a href="https://docs.google.com/document/d/1JrXasYrt-j38H9j5mXZHQsc0pAteua2X5UGhCgaAbXA/edit?usp=sharing">Written Template</a></li>
+              <li><a href="https://drive.google.com/drive/folders/1jw9FWa2DZuDmGnAh9em4bo5w5MBfjcIy?usp=sharing">Art Template</a></li>
+              <li><a href="https://forms.gle/cVDyAXo4yE9RuDZw6">Submission Form</a></li>
+            </ul></div>
+            </div>
+                 
+            </div>
+          </div> -->
+          <div class="break"></div>
+        </div>
+      </div>
 
-    sound.play();
-    centerImg.src = openDoor.src;
+      <hr class="w-50 mx-auto" />
+      <div class="break"></div>
+      <!-- <div class="d-flex flex-row justify-content-between no-gutters">
+<div class="col"><center><i class="fa-solid fa-spaghetti-monster-flying fa-10x"></i><br><br><b>Luuvy</b><br><i>moderator</i></center></div>
+<div class="col"><center><i class="fa-solid fa-ghost fa-10x"></i><br><br><b>Em</b><br><i>moderator</i></center></div>
+<div class="col"><center><i class="fa-solid fa-computer fa-10x"></i><br><br><b>PR</b><br><i>moderator</i></center></div>
+</div> -->
+      <div class="break"></div>
 
-    setTimeout(() => {
-      window.location.href = 'home.html';
-    }, 1200);
-  }
-}
-</script>
-</body>
+      <div class="w-50 mx-auto"><h1 style="text-align: center">⚡︎ ⚡︎ Coming Soon ...</h1></div>
+
+      <a href="deadtired/dooropen.html" class="imglink">
+        <div class="split-image-container">
+          <div class="quadrant quadrant-1"></div>
+          <div class="quadrant quadrant-2"></div>
+          <div class="quadrant quadrant-3"></div>
+          <div class="quadrant quadrant-4"></div>
+        </div>
+      </a>
+      <div class="break"></div>
+      <div class="break"></div>
+    </div>
+  </div>
 </html>
